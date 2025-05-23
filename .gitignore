@@ -1,0 +1,7 @@
+.DS_Store
+**/*.zip
+**/result/*
+**/.vscode/*
+**/.idea/*
+**/HDRVDP-2.2-CP_Class/*
+**/__pycache__/*
