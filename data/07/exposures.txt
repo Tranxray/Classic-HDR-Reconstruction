@@ -1,0 +1,15 @@
+Ldr01       1/2s 
+Ldr02       1/4s 
+Ldr03       1/8s
+Ldr04       1/15s 
+Ldr05       1/30s
+Ldr06       1/60s
+Ldr07       1/125s
+Ldr08       1/251s
+Ldr09       1/502s 
+Ldr10       1/1009s 
+Ldr11       1/2024s
+Ldr12       1/4016s 
+Ldr13       1/17241s
+Ldr14       1/43478s
+Ldr15       1/71429s

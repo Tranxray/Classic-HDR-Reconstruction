@@ -19,7 +19,7 @@ def convert_frac_to_float(exp:str)->float:
         return time1
 
 
-def load_exposure_txt(path_test):
+def load_exposure_txt(path_test,ldr_num):
     filenames = []
     exposure_times = []
     with open(os.path.join(path_test, "exposures.txt")) as f:
@@ -28,18 +28,31 @@ def load_exposure_txt(path_test):
             filenames.append(os.path.join(path_test, filename + ".jpg"))
             exposure_times.append(convert_frac_to_float(exposure))
 
-    print(exposure_times)
-    
-    return filenames, exposure_times
+    if ldr_num<=0: ldr_num=len(filenames)
+    random_idxs = np.random.choice(range(len(filenames)), size=ldr_num, replace=False)
+
+    chosen_filenames=[]
+    chosen_exposure=[]
+    for idx in random_idxs:
+        chosen_filenames.append(filenames[idx])
+        chosen_exposure.append(exposure_times[idx])
+
+    print("readed exposure time: ",chosen_exposure)
+
+    return chosen_filenames, chosen_exposure
 
 
 def read_image(path):
     shape = cv2.imread(path[0]).shape
 
     images = np.zeros((len(path), shape[0], shape[1], shape[2]))
+
+    print("readed images: ")
+
     for idx,i in enumerate(path):
         image = cv2.imread(i)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        print(i)
         images[idx, :, :, :] = image
     return images
 

@@ -8,7 +8,7 @@ from utils import *
 
 
 def main(config):
-    files, exps = load_exposure_txt("data/" + config.path)
+    files, exps = load_exposure_txt("data/" + config.path,config.ldr_num)
 
     # Convert to log exposure times
     log_exps = np.log(np.array(exps))
@@ -75,6 +75,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--path", type=str, default="01")
     parser.add_argument("--save_name", type=str, default="hdr.jpg")
+    parser.add_argument("--ldr_num", type=int, default=0)
     config = parser.parse_args()
 
     out = main(config)

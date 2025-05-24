@@ -23,8 +23,6 @@ HDR_Reconstruction/
 └── README.md               # This project documentation
 ```
 
-The copyright of the original data from the course belongs to PKU-CameraLab, so they are not released
-
 ## Dependencies
 
 - Python 3.7+
@@ -42,12 +40,17 @@ pip install -r requirements.txt
 Run the main script from the project root:
 
 ```bash
-python main.py --path 06 --save_name hdr_result.jpg
+python main.py --path 06 --save_name hdr_result.jpg --ldr_num 9
 ```
+
+The copyright of the original data (01-05) from the course belongs to PKU-CameraLab, so they are not released
+
+Two sets of self-captured LDR images (06&07) is available, but they are of low quality
 
 Arguments:
 - `--path`: subfolder name under `data/`
 - `--save_name`: output filename for the tonemapped LDR image
+- `--ldr_num`: the number of used LDR image
 - The HDR `.hdr` file will be saved as `result/<path>/output.hdr`
 
 ## Features
